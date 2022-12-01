@@ -1,0 +1,113 @@
+
+.main-div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10vh 1vw;
+    background-color: transparent;
+}
+
+.search-div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.search-div > .btn {
+    background-color: var(--logo-color-cyan);
+    margin: 0 2rem;
+}
+
+.hr {
+    height: 1px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid black;
+}
+
+.main-div > .accordion {
+    width: 80%;
+}
+
+.accordion-body {
+    display: flex;
+    justify-content: center;
+    padding: 10px 2%;
+    font-size: 1.5vw;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-button > span {
+    font-size: 1.5rem;
+}
+
+.accordion-button > .visitor{
+    position: absolute;
+    left: 2%;
+}
+
+.accordion-button > .visit-date{
+    position: absolute;
+    right: 5%;
+}
+
+.date-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.valid-row {
+    display: flex;
+    justify-content: end;
+}
+
+.btn-valid {
+    font-size: 1.5rem;
+    width: 40%;
+}
+
+@media (orientation: portrait) {
+
+    .valid-row {
+        justify-content: center;
+    }
+
+    .btn-valid {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+    
+    .main-div > .accordion {
+        width: 95%;
+    }
+
+    .accordion-body {
+        padding: 10px 5%;
+        font-size: 3vw;
+    }
+
+    .accordion-button > span {
+        font-size: 5vw;
+    }
+
+    .accordion-button > .visitor {
+        display: none;
+    }
+
+    .accordion-button > .visit-date{
+        position: absolute;
+        left: 2%;
+    }
+}

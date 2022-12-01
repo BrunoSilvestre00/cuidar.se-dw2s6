@@ -1,0 +1,43 @@
+@import url('http://fonts.cdnfonts.com/css/maximum-impact');
+
+.main-div {
+    padding: 3rem 1rem;
+}
+
+.hello-user {
+    font-family: 'Maximum Impact', sans-serif;
+    font-size: 3rem;
+    color: var(--background-color);
+    -webkit-text-stroke: 2px var(--logo-color-cyan);
+}
+
+.hello-logo {
+    width: auto;
+    height: 15vh;
+    margin-bottom: 2rem;
+}
+
+.options-div {
+    padding: 2rem 3rem;
+    background: transparent;
+    border: 3px solid var(--logo-color-cyan);
+    border-radius: 20px;
+    max-width: 80vw;
+}
+
+.options-title {
+    color: var(--light);
+}
+
+#admin-btn, #visitas-btn, #logout-btn {
+    width: 100%;
+    background-color: var(--logo-color-orange);
+    color: var(--light);
+    margin: 1rem 0;
+    font-size: inherit;
+}
+
+#logout-btn {
+    background-color: var(--logo-color-cyan);
+    color: var(--background-color);
+}

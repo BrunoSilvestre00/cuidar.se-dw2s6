@@ -1,0 +1,45 @@
+@import url('http://fonts.cdnfonts.com/css/maximum-impact');
+
+.form-title {
+    font-family: 'Maximum Impact', sans-serif;
+    font-size: 3rem;
+    color: var(--light);
+    -webkit-text-stroke: 2px var(--theme-color);
+    margin-bottom: 20px;
+}
+
+.form-div {
+    padding: 20px 50px;
+    background: transparent;
+    border: 3px solid var(--theme-color);
+    border-radius: 20px;
+}
+
+.form-group > label {
+    color: var(--light);
+}
+
+.form-group > input {
+    font-size: inherit;
+}
+
+.visitor-form > .row > .form-group {
+    margin: 15px 0;
+}
+
+.visitor-form > button {
+    background-color: var(--theme-color);
+    color: var(--light);
+    margin: 20px 0;
+    font-size: inherit;
+}
+
+@media (orientation: portrait) {
+    .visitor-form > button {
+        width: 100%;
+    }   
+
+    .form-title {
+        font-size: 7vw;
+    }
+}
