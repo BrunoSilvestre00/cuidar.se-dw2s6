@@ -3,7 +3,7 @@ from decouple import config as env
 SECRET_KEY = env('SECRET_KEY')
 
 HOSTS = [
-    '127.0.0.1:8000', '127.0.0.1:3000', 'localhost:3000', '25.28.197.128:8000'
+    '127.0.0.1:8000', '127.0.0.1:3000', 'localhost:8000', 'localhost:3000', '25.28.197.128:8000'
 ]
 
 ALLOWED_HOSTS = [
