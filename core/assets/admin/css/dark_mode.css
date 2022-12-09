@@ -1,14 +1,14 @@
 @media (prefers-color-scheme: light) or (prefers-color-scheme: dark){
     :root {
-      --logo-color-orange: #F57500;
-      --logo-color-cyan: #00CAED;
+      --logo-color-orange: #748ECC;
+      --logo-color-cyan: #89C2D2;
 
-      --primary: #00a1bd;
+      --primary: #75B9CE;
       --primary-fg: #333;
-      --secondary: #00798e;
+      --secondary: #75B9CE;
       --accent: var(--logo-color-orange);
 
-      --header-color: #f79032;
+      --header-color: #ACBAE3;
       --header-branding-color: var(--accent);
       --header-bg: #111;
       --header-link-color: #eee;
@@ -21,9 +21,9 @@
       --breadcrumbs-link-fg: #e0e0e0;
       --breadcrumbs-bg: var(--primary);
   
-      --link-fg: #f79032;
+      --link-fg: #ACBAE3;
       --link-hover-color: var(--logo-color-orange);
-      --link-selected-fg: #ab5100;
+      --link-selected-fg: #748ECC;
   
       --hairline-color: #272727;
       --border-color: #353535;

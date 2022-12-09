@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ] + static(STATIC_URL, document_root=STATIC_ROOT)
 
-admin.site.site_header = "VisitaFácil Admin"
-admin.site.site_title = "VisitaFácil Admin"
+admin.site.site_header = "Cuidar.se Admin"
+admin.site.site_title = "Cuidar.se Admin"
