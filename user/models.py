@@ -20,6 +20,18 @@ class User(AbstractUser):
         return base64.encodebytes(key.encode('utf-8')).decode('utf-8').replace('\n', '')
 
 
+class Relative(models.Model):
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=255)
+    birth_date = models.DateField(verbose_name='Data de Nascimento')
+    responsable = models.ForeignKey(User, verbose_name='Responsável', on_delete=models.CASCADE)
+    
+    class Meta:
+        db_table='relative'
+        verbose_name='Dependente'
+        verbose_name_plural='Dependentes'
+
+
 class ApiToken(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50, unique=True)

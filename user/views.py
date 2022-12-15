@@ -1,12 +1,31 @@
 from django.http import QueryDict
 from django.shortcuts import render
-from rest_framework import parsers, renderers
+from rest_framework import status, parsers, renderers, generics
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from user.models import UserToken
 from user.permissions import HasAPIAccess
+from user.serializers import UserSerializer
+
+
+class UserCreateView(generics.CreateAPIView):
+
+    serializer_class = UserSerializer
+    permission_classes = (HasAPIAccess, )
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        
+        token, created = UserToken.objects.get_or_create(user=user)
+        
+        data = serializer.data
+        data['token'] = token.key
+        
+        return Response(data, status=status.HTTP_201_CREATED)
 
 
 class LoginView(APIView):
