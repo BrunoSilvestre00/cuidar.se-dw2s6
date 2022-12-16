@@ -55,6 +55,18 @@ class Anotation(models.Model):
     def categories(self):
         return dict(self.CATEGORY_CHOICES)
     
+    @property
+    def category_name(self):
+        return self.categories[self.category].title()
+
+    @property
+    def status_choices(self):
+        return dict(self.STATUS_CHOICES)
+    
+    @property
+    def status_name(self):
+        return self.status_choices[self.status].title()
+    
     def __str__(self):
-        return f'{self.categories[self.category].title()} - {self.value}'
+        return f'{self.category_name} - {self.value}'
        

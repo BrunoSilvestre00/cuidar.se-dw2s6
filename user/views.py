@@ -1,13 +1,22 @@
 from django.http import QueryDict
 from django.shortcuts import render
-from rest_framework import status, parsers, renderers, generics
+from rest_framework import (generics, mixins, parsers, permissions, renderers,
+                            status, viewsets)
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from user.models import UserToken
+from user.authentication import TokenAuthentication
+from user.models import UserToken, User
 from user.permissions import HasAPIAccess
 from user.serializers import UserSerializer
+
+
+class UserViewSet(viewsets.GenericViewSet, mixins.RetrieveModelMixin):
+    serializer_class = UserSerializer
+    authentication_classes = (TokenAuthentication,)
+    queryset = User.objects.all()
+    lookup_field = 'id'
 
 
 class UserCreateView(generics.CreateAPIView):

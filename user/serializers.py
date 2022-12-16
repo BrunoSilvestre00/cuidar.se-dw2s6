@@ -30,7 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
         names = user_data['username'].split(' ')
         user_data['first_name'] = names[0]
         user_data['last_name'] = names[1] if len(names) > 1 else ''
-        user_data['username'] += str(random.randint(10, 101))
+        user_data['username'] += user_data['username'].lower().replace(' ', '_') + str(random.randint(10, 101))
         
         return User.objects.create_user(**user_data)
         
