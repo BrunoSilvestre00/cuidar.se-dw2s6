@@ -39,7 +39,7 @@ class Anotation(models.Model):
         (STABLE, 'Estável'),
     )
     
-    value = models.IntegerField(verbose_name='Valor')
+    value = models.DecimalField(verbose_name='Valor', max_digits=20, decimal_places=2)
     datetime = models.DateTimeField(verbose_name='Data e hora')
     observation = models.CharField(verbose_name='Observações', max_length=255)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
